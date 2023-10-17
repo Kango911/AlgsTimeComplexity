@@ -6,16 +6,16 @@
         xmlns:local="clr-namespace:AlgsTimeComplexity"
         xmlns:wpf="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="ADY" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.05*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button x:Name="BtnCalculate" Content="Click Me" 
+            <Button x:Name="BtnCalculate" Content="Жмякни меня" 
                     Command="{Binding CalculateCommand}"/>
-            <TextBox Width="100" Text="{Binding Path=IterationsBeforeUpdate}"></TextBox>
+            <TextBox Width="200" Text="{Binding Path=IterationsBeforeUpdate}"></TextBox>
             <ComboBox x:Name="Methods" ItemsSource="{Binding Path=Methods}"
                       DisplayMemberPath="Name" SelectedItem="{Binding SelectedMethod}"/>
         </StackPanel>

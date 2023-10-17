@@ -44,7 +44,7 @@ public class PlotModel<T>
             Text = "Speed",
             TextSize = 25,
             Padding = new LiveChartsCore.Drawing.Padding(15),
-            Paint = new SolidColorPaint(SKColors.DarkSlateGray)
+            Paint = new SolidColorPaint(SKColors.MediumPurple)
         };
     }
 }
