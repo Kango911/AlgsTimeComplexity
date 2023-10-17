@@ -214,5 +214,58 @@ public static class TestingMethods
         }
         return list;
     }
+    
+    
+    public static TimeSpan HeapSort(List<int> list, int size)
+    {
+
+        var watch = Stopwatch.StartNew();
+        var result = HeapSortArray(list, size);
+        watch.Stop();
+
+        return watch.Elapsed;
+    }
+    private static List<int> HeapSortArray(List<int> list, int size)
+    {
+        if (size <= 1)
+            return list;
+        for (int i = size / 2 - 1; i >= 0; i--)
+        {
+            Heapify(list, size, i);
+        }
+        for (int i = size - 1; i >= 0; i--)
+        {
+            var tempVar = list[0];
+            list[0] = list[i];
+            list[i] = tempVar;
+            Heapify(list, i, 0);
+        }
+        return list;
+    }
+    static void Heapify(List<int> list, int size, int index)
+    {
+        var largestIndex = index;
+        var leftChild = 2 * index + 1;
+        var rightChild = 2 * index + 2;
+
+        if (leftChild < size && list[leftChild] > list[largestIndex])
+        {
+            largestIndex = leftChild;
+        }
+
+        if (rightChild < size && list[rightChild] > list[largestIndex])
+        {
+            largestIndex = rightChild;
+        }
+
+        if (largestIndex != index)
+        {
+            var tempVar = list[index];
+            list[index] = list[largestIndex];
+            list[largestIndex] = tempVar;
+
+            Heapify(list, size, largestIndex);
+        }
+    }
 
 }
