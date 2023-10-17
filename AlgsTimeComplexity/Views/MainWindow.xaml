@@ -13,7 +13,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button x:Name="BtnCalculate" Content="Жмякни меня" 
+            <Button x:Name="BtnCalculate" Content="Push me" 
                     Command="{Binding CalculateCommand}"/>
             <TextBox Width="2" Text="{Binding Path=IterationsBeforeUpdate}"></TextBox>
             <ComboBox x:Name="Methods" ItemsSource="{Binding Path=Methods}"
