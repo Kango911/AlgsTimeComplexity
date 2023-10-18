@@ -13,7 +13,7 @@ public class ViewModel : ObservableObject
     public PlotModel<double> TimePlot { get; set; }
 
     public RelayCommand CalculateCommand => 
-        new RelayCommand(execute => CalculateParallel(2000));
+        new RelayCommand(execute => CalculateParallel(5000));
     
     public MethodInfo[] Methods { get; set; }= 
         typeof(TestingMethods).GetMethods(BindingFlags.Public | BindingFlags.Static);
@@ -84,7 +84,7 @@ public class ViewModel : ObservableObject
         var list = new List<int>();
         var random = new Random();
         
-        if (size is < 0 or > 2000)
+        if (size is < 0 or > 5000)
             return list;
 
         for (var i = 0; i < size; i++)
