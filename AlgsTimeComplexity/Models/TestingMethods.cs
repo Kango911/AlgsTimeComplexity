@@ -72,22 +72,21 @@ public static class TestingMethods
     
 
     
-    public static TimeSpan Gorner(List<int> list, int size)
+    public static double Horner(List<int> list, int size)
     {
+        double resualt = list[0];
+        var x = 1.5f;
 
         var watch = Stopwatch.StartNew();
-        var result = GornerArray(list, 0, size - 1);
+        for (int i = 1; i < size; i++)
+        {
+            resualt = resualt * x + list[i];
+        }
         watch.Stop();
 
-        return watch.Elapsed;
+        return watch.Elapsed.TotalMilliseconds;
     }
-    private static int GornerArray(List<int> list, int lIndex, int rIndex)
-    {
-        return 0;
-        int x;
-        int i;
-        return list[lIndex] + x * GornerArray(list, x, i + 1);
-    }
+ 
     
     
     
@@ -141,7 +140,7 @@ public static class TestingMethods
         watch.Stop();
 
         return watch.Elapsed;
-    }
+    } // Включение в отображаемый список и функцию отсчета времени
     
     private static List<int> ShakerSortArray(List<int> list)
     {

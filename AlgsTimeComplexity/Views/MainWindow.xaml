@@ -15,7 +15,7 @@
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <Button x:Name="BtnCalculate" Content="Push me" 
                     Command="{Binding CalculateCommand}"/>
-            <TextBox Width="2" Text="{Binding Path=IterationsBeforeUpdate}"></TextBox>
+            <TextBox Width="100" Text="{Binding Path=IterationsBeforeUpdate}"></TextBox>
             <ComboBox x:Name="Methods" ItemsSource="{Binding Path=Methods}"
                       DisplayMemberPath="Name" SelectedItem="{Binding SelectedMethod}"/>
         </StackPanel>
